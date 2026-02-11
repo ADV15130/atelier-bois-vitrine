@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: labbe15/atelier-bois-vitrine
+  repo: ADV15130/atelier-bois-vitrine
   branch: main
   base_url: https://atelier-bois-vitrine.vercel.app
   auth_endpoint: api/auth
