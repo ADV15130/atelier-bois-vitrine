@@ -34,26 +34,3 @@ export default function handler(req: any, res: any) {
   res.setHeader('Content-Type', 'application/json');
   res.status(200).json(config);
 }
-Et change le public/admin/index.html:
-
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="noindex" />
-  <title>Admin - L'Atelier du Volcan</title>
-</head>
-<body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    fetch('/api/admin-config')
-      .then(res => res.json())
-      .then(config => {
-        window.CMS_CONFIG = config;
-      });
-  </script>
-</body>
-</html>
-Voilà! Comme ça, la config vient d'une API, pas d'un fichier statique que Vercel redirige. 👍
-
