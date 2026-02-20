@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ADV15130/atelier-bois-vitrine
   branch: main
-  base_url: https://atelier-bois-vitrine.vercel.app
+  base_url: https://www.atelier-du-volcan.com
   auth_endpoint: api/auth
 
 media_folder: "public/images/uploads"
