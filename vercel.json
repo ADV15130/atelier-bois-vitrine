@@ -27,6 +27,6 @@
     }
   ],
   "rewrites": [
-    { "source": "/((?!api|admin).*)", "destination": "/" }
+    { "source": "/((?!api|admin|public).*)", "destination": "/" }
   ]
 }
