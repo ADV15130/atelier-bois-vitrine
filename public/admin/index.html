@@ -7,12 +7,39 @@
   <title>Admin - L'Atelier du Volcan</title>
 </head>
 <body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
-    if (window.CMS) {
-      window.CMS.init();
-    }
+    window.CMS_CONFIG = {
+      backend: {
+        name: 'github',
+        repo: 'labbe15/atelier-bois-vitrine',
+        branch: 'main',
+        base_url: 'https://atelier-bois-vitrine.vercel.app',
+        auth_endpoint: 'api/auth'
+      },
+      media_folder: 'public/images/uploads',
+      public_folder: '/images/uploads',
+      collections: [
+        {
+          name: 'realisations',
+          label: 'Réalisations',
+          folder: 'content/realisations',
+          create: true,
+          extension: 'json',
+          format: 'json',
+          identifier_field: 'title',
+          slug: '{{slug}}',
+          fields: [
+            { label: 'Titre', name: 'title', widget: 'string' },
+            { label: 'Catégorie', name: 'category', widget: 'select', options: ['Structure', 'Menuiserie', 'Agencement', 'Extension Bois'] },
+            { label: 'Lieu', name: 'location', widget: 'string' },
+            { label: 'Description', name: 'description', widget: 'text' },
+            { label: 'Image principale', name: 'image', widget: 'image' },
+            { label: 'Galerie d\'images', name: 'gallery', widget: 'list', required: false, field: { label: 'Image', name: 'image', widget: 'image' } }
+          ]
+        }
+      ]
+    };
   </script>
 </body>
 </html>
